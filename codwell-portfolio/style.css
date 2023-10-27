@@ -1,0 +1,364 @@
+/* Custom properties */
+:root{
+    --light-color: #fff;
+    --light-color-alt: #afb6cd;
+    --primary-background-color: #0D0D0D;
+    --secondary-background-color: #252830;
+    --hover-light-color: var(--light-color);
+    --hover-dark-color: var(--primary-background-color);
+    --font-family-body:"inter", sans-serif;
+    --font-size-xsm: 1.2rem;
+    --font-size-sm: 1.6rem;
+    --font-size-md: 2.4rem;
+    --font-size-lg: 3rem;
+    --font-size-xl: 4rem;
+    --gap: 5rem;
+    --margin-sm: 2rem;
+    --margin-md: 3rem;
+}
+/* Base styles */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    font-size: 62.5%;
+}
+
+body{
+    font-family: var(--font-family-body);
+    font-size: var(--font-size-sm);
+    color: var(--light-color-alt);
+    background-color: var(--primary-background-color);
+    letter-spacing: 1px;
+}
+
+a{
+    color: inherit;
+    text-decoration: none;
+}
+
+ul{
+    list-style: none;
+}
+
+img{
+    max-width: 100%;
+    height: auto
+}
+
+input,
+button {
+  font: inherit;
+  color: inherit;
+  border: none;
+  background-color: transparent;
+}
+
+i{
+    font-size: var(--font-size-md);
+}
+
+/* Reusable classes*/
+.container{
+    max-width: 160rem;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+.place-items-center{
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+.screen-sm-hidden{
+    display: none;
+}
+
+/* Header*/
+.header{
+    position: fixed;
+    top:0;
+    left:0;
+    width: 100%;
+    z-index: 999;
+    font-family: "prata";
+   
+}
+.navbar{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-block: 1.5rem
+}
+.logo{
+    font-size: var(--font-size-md);
+    color:var(--light-color);   
+}
+.menu{
+    position: absolute;
+    top: 8.5rem;
+    right: 1.5rem;
+    width: 23rem;
+    background-color: var(--secondary-background-color);
+    opacity: 0;
+    transform: scale(0);
+    transition: opacity .25s ease-in;
+    padding: 1rem 0;
+}
+.list{
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+.menu > .list{
+    flex-direction: column;
+}
+.close-menu{
+    display: none;
+}
+.btn{
+    cursor: pointer
+}
+.list-link:hover,.btn:hover{
+    color: var(--light-color);
+}
+
+/*javaScript header style*/
+.header.activated{
+    box-shadow: 0 1px .5rem var(--transparent-light-color);
+}
+.menu.activated{
+    box-shadow: 1px 1px 1rem var(--transparent-light-color);
+    opacity: 1;
+    transform: scale(1);
+}
+
+.menu-toggle-icon.activated .open-menu{
+    display: none;
+}
+
+.menu-toggle-icon.activated .close-menu{
+    display: block;
+}
+/*About page*/
+.about{
+    margin-top: 14rem; 
+}
+.about-container{
+   display: grid;
+   gap: var(--gap)
+}
+.intro{
+    padding: 1rem;
+  
+}
+.intro > h1{
+    color: var(--light-color);
+    padding: 4rem;
+    font-family: "prata";
+}
+.intro > p{
+    padding: 0 4rem
+}
+.company-logos{
+    display: grid;
+    grid-template-columns: auto auto;
+    gap: 2rem;
+    margin: 0 auto
+    
+}
+.company-logos > div{
+    display: flex;
+    justify-content:center;
+    align-items: center;
+}
+
+.projects{
+    padding: 2rem;
+
+}
+.spence-com,.yelpcamp{
+    padding: 2rem
+}
+.spence-com h2,.yelpcamp h2{
+    color: var(--light-color);
+    font-family: "prata";
+    font-size: var(--font-size-lg);
+   margin: var(--margin-sm);
+   text-align: left;
+   margin-left: -0.1rem;
+}
+
+.yelpcamp > img{
+    margin-top: 5rem
+}
+/*Articles*/
+.articles{
+    background-color: var(--secondary-background-color);
+    margin-top: 5rem 
+}
+.articles >div h2{
+    font-family:"prata";
+    color: var(--light-color);
+    font-size: var(--font-size-lg);
+    padding: 3rem
+}
+.articles > div p{
+    padding: 2rem;
+}
+.margin-top{
+    margin-top: 5rem;
+}
+
+/*Contact*/
+.contact{
+    padding: 10rem 2rem
+}
+.contact h2 {
+    font-family:"prata";
+    color: var(--light-color);
+    padding: 0 6rem 0 0;
+    font-size: var(--font-size-lg);
+}
+.contact p{
+    margin: 1rem 0 5rem 0 ;
+    padding: 0 5.6rem 0 0 ;
+
+}
+ .btn-contact{
+    background-color: #DBF227;
+    color: black;
+    font-weight: 700;;
+    font-family: "prata";
+    padding: 2rem 5rem;
+
+}
+
+/*footer*/
+footer{
+    background-color: var(--secondary-background-color);
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem
+}
+.socials{
+    display: flex;
+    gap: 1.5rem;
+}
+footer h3{
+    color: var(--light-color);
+    font-family: "prata";
+}
+/* Scrollbar */
+::-webkit-scrollbar {
+    width: 1rem;
+}
+  
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+  
+::-webkit-scrollbar-thumb {
+    background: #3f4254;
+}
+  
+::-webkit-scrollbar-thumb:hover {
+    background: #2e303b;
+}
+@media screen and (min-width: 700px){
+    .intro > h1{
+      font-size: 5rem;
+    }
+    .company-logos{
+        grid-template-columns: auto auto auto;
+        gap: 5rem
+    }
+    .projects{
+        padding: 8rem;
+    }
+    .spence-com{
+       
+        margin-bottom: 4rem;
+        
+    }
+    .contact p{
+        width: 80%
+    }
+      
+    
+}
+
+@media screen and (min-width: 1024px) {
+    .menu{
+        position: static;
+        width: initial;
+        padding: initial;
+        background-color: transparent;
+        opacity: 1;
+        transform: scale(1);
+    }
+    .menu > .list{
+        flex-direction: row;
+    }
+    .screen-sm-hidden{
+        display: block;
+    }
+    .screen-lg-hidden{
+        display: none
+    }
+    .intro{
+        width: 70%
+    }
+    .company-logos{
+        display: flex;
+        gap: 5rem;
+    }
+
+    .contact-btn{
+        background-color: #DBF227;
+        color: black;
+        font-weight: 700;;
+        font-family: "prata";
+        padding: 1rem 5rem;
+        border-radius: 5px
+    }
+    .projects{
+        display: grid;
+        grid-template-columns: auto auto;
+        align-items: center;
+    }
+    .spence-com{
+        margin: 0
+    }
+    .yelpcamp > img{
+        margin-top: 0rem
+    }
+    .articles{
+        display: grid;
+        grid-template-columns: auto auto;
+      padding: 3rem;
+    }
+    .articles >div h2{
+        font-family:"prata";
+        color: var(--light-color);
+        font-size: 3.5;
+        padding: 3rem
+    }
+    .margin-top{
+        margin-top: 0
+    }
+    .contact{
+        width: 70%
+    }
+    .d-grid-1{
+        padding: 0 4rem
+    }
+    .d-grid-2{
+        padding: 0 4rem
+    }
+}
+
